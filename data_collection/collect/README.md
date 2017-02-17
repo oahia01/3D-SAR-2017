@@ -52,8 +52,8 @@ Console GUI. Navigate to "Settings" and click on the sidemenu item "Simulation".
 Make sure to set "Enable" to true.
 
 ## SSH to Hummingboard
-Note: Windows 8 or higher will not automatically connect to an ad-hoc network. Connections
-      require extra configuration.
+Note: Windows 8 or higher will not automatically connect to an ad-hoc network. Extra configuration
+      is necessary. See: https://globalcache.zendesk.com/hc/en-us/articles/114094165352-FAQ-Windows-8-1-and-Windows-10-AdHoc-network-support-solution
 
 1) Turning on the Hummingboard starts an ad hoc WiFi network 'SAR-PROJECT' -- wait a few
 minutes and join this on your computer
