@@ -117,7 +117,7 @@ void Piksi::collect(msg_pos_llh_t &pos, msg_gps_time_t &gps, msg_baseline_ned_t 
     callbacks_rcvd = 0;
 
     if (ret >= 0) {
-//        pos = pos_llh;
+        pos = pos_llh;            // Uncommented on March 10, 2017
         ned = baseline_ned;
         gps = gps_time;
     }
