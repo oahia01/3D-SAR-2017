@@ -96,6 +96,7 @@ int main(int argc, char *argv[]) {
     gettimeofday(&currTime, NULL);
     prevTime = currTime;
     long diff = 0;
+    int rad_delay = 1000000000;
     
     do {
         wait_for(sock, START_COLLECT);
@@ -111,13 +112,13 @@ int main(int argc, char *argv[]) {
             // this is necessary because ns wrap when seconds elapse
             // 10^9 ns is one second
             if (currTime.tv_sec > prevTime.tv_sec) {
-                diff = 1000000 + (currTime.tv_usec - prevTime.tv_usec);
+                diff = rad_delay + (currTime.tv_usec - prevTime.tv_usec);   //Originally 1000000
             } else {
                 diff = currTime.tv_usec - prevTime.tv_usec;
             }
             // if diff is greater than 100ms, take gps / radar data
             // (10 Hz data rate)
-            if (diff > 100000) {
+            if (diff > rad_delay) {
                 ph.collect();
                 prevTime = currTime;
             }
